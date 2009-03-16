@@ -27,6 +27,12 @@ $menu = new menu();
 
 
 
+/**
+ * @todo Apply GESHI syntax highlighting
+ * @todo Create a clean way to specify source code language type in the Markdown file.
+ * @todo Add some fancy CSS to make the page look similar to the MooTools Docs Page
+ */
+
 
 echo $menu->output();
 
