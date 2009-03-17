@@ -5,7 +5,7 @@
 * 
 * Example:
 * 	$menu = new menu();
-* 	echo $menu->output();
+* 	echo $menu->generate();
 * 
 */
 class Menu
@@ -16,7 +16,7 @@ class Menu
 	function __construct($dir='docs/',$filetype='.md')
 	{
 		$this->dir = & $dir;
-		$this->filetype = "*$filetype";
+		$this->filetype = & $filetype;
 	}
 	
 	/**
@@ -49,9 +49,9 @@ class Menu
 	 *
 	 * @return string $html
 	 */
-	function output()
+	function generate()
 	{
-		$files = $this->rglob($this->filetype,0,$this->dir);
+		$files = $this->rglob('*'.$this->filetype,0,$this->dir);
 
 		$html = "";
 
@@ -61,7 +61,7 @@ class Menu
 
 			foreach ($files as $file) {
 				$file  = pathinfo($file);
-				$url   = "/$group/$file[filename]";
+				$url   = "?file=$group/$file[filename]";
 				$html .= "\t<div><a href=\"$url\">$file[filename]</a></div>\n";
 			}
 

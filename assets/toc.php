@@ -66,8 +66,6 @@ class TOC
 		$this->content  = & $content;
 		$this->maxlevel = & $maxlevel;
 		$this->minlevel = & $minlevel;
-
-		$this->scan();
 		
 		return true;
 	}
@@ -88,6 +86,16 @@ class TOC
 						'text'=>$match[5]
 						);
 	}
+	
+	function generate()
+	{
+		if (count($this->toc) < 1) {
+			$this->scan();
+		}
+		
+		return $this->output();
+	}
+	
 	
 	function output_list()
 	{
@@ -141,6 +149,7 @@ class TOC
 	
 	function output()
 	{
+
 		$html = "";
 		
 		foreach ($this->toc as $item) {
