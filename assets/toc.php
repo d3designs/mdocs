@@ -139,7 +139,7 @@ class TOC
 		return $html;
 	}
 	
-	function output_flat()
+	function output()
 	{
 		$html = "";
 		

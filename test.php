@@ -37,7 +37,7 @@ $menu = new menu();
 echo $menu->output();
 
 
-echo $toc->output_flat();
+echo $toc->output();
 
 
 
