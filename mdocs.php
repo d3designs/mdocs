@@ -1,38 +1,3 @@
-<style type="text/css" media="screen">
-
-.kw1 {
-	color: #1b609a;
-}
-
-.kw2 {
-	color: #9a6f1b;
-}
-
-.me1 {
-	color: #666;
-}
-
-.kw3, .re0, .sc1 {
-	color: #784e0c;
-}
-
-.br0 {
-	color: #444;
-}
-
-.st0 {
-	color: #489a1b;
-}
-
-.co1, .coMULTI {
-	color: #888;
-}
-
-.nu0 {
-	color: #70483d;
-}
-
-</style>
 <?php
 
 error_reporting(E_ALL);
@@ -116,23 +81,11 @@ $doc = $markdown->transform($doc);
 // Apply GeSHi Syntax Highlighting:
 $doc = $geshi->parse_codeblocks($doc);
 
+// Create Menu:
+$menu->generate();
 
-
-/**
- * @todo Add some fancy CSS to make the page look similar to the MooTools Docs Page
- */
-
-
-// Display Menu:
-echo $menu->generate();
-
-// Display Table of Contents:
-echo $toc->generate();
-
-// Display the Document:
-echo $doc;
-
-
+// Create TOC:
+$toc->generate();
 
 
 /**
