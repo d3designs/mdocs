@@ -12,11 +12,17 @@ class Menu
 {
 	var $dir;
 	var $filetype;
+	var	$html;
 	
 	function __construct($dir='docs/',$filetype='.md')
 	{
 		$this->dir = & $dir;
 		$this->filetype = & $filetype;
+	}
+	
+	function __toString()
+	{
+		return $this->html;
 	}
 	
 	/**
@@ -53,21 +59,22 @@ class Menu
 	{
 		$files = $this->rglob('*'.$this->filetype,0,$this->dir);
 
-		$html = "";
+		$this->html = "";
 
 		foreach ($files as $group => $files) {
 
-			$html .= "<h4>$group</h4>\n";
+			$this->html .= "<h4>$group</h4>\n";
 
 			foreach ($files as $file) {
-				$file  = pathinfo($file);
-				$url   = "?file=$group/$file[filename]";
-				$html .= "\t<div><a href=\"$url\">$file[filename]</a></div>\n";
+				$file        = pathinfo($file);
+				$url         = "?file=$group/$file[filename]";
+				$this->html .= "\t<div><a href=\"$url\">$file[filename]</a></div>\n";
+
 			}
 
 		}
 
-		return $html;
+		return $this->html;
 	}
 
 }

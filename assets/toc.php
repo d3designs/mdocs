@@ -57,6 +57,8 @@ class TOC
 	 * @var string
 	 */
 	var $trim = '$ ';
+	
+	var $html;
 
 	function __construct($content='',$maxlevel=1,$minlevel=2)
 	{
@@ -69,6 +71,12 @@ class TOC
 		
 		return true;
 	}
+	
+	function __toString()
+	{
+		return $this->html;
+	}
+	
 
 	function scan()
 	{
@@ -99,9 +107,10 @@ class TOC
 	
 	function output_list()
 	{
-		$html = "";
-
-	    for ($i = 0; $i < count($this->toc); $i ++) {
+		$this->html = "";
+		
+		$toc_total = count($this->toc);
+	    for ($i = 0; $i < $toc_total; $i ++) {
 			
 			$level = & $this->toc[$i]['level'];
 			$id    = & $this->toc[$i]['id'];
@@ -118,39 +127,39 @@ class TOC
 	        if ($i == 0) {
 	            $level = min($level, $this->minlevel);
 	            $stack = array($level);
-	            $html .= "\t<ol><li>$link";
+	            $this->html .= "\t<ol><li>$link";
 	        } else {
 	            $prev = $stack[count($stack)-1];
 	            if ($level == $prev) {
-	                $html .= "</li>\n\t<li>$link";
+	                $this->html .= "</li>\n\t<li>$link";
 	            } elseif ($level < $prev) {
 					
 	                while (count($stack) > 1) {
 	                    array_pop($stack);
-	                    $html .= "</li></ol>";
+	                    $this->html .= "</li></ol>";
 	                    $prev = $stack[count($stack)-1];
 	                    if ($level >= $prev)
 	                        break;
 	                }
-	                $html .= "</li>\n\t<li>$link";
+	                $this->html .= "</li>\n\t<li>$link";
 	            } else {
 	                $stack[] = $level;
-	                $html .= "\n\t<ol><li>$link";
+	                $this->html .= "\n\t<ol><li>$link";
 	            }
 	        }
 	    }
 	    while (count($stack) > 0) {
 	        array_pop($stack);
-	        $html .= "</li></ol>";
+	        $this->html .= "</li></ol>";
 	    }	 
 		
-		return $html;
+		return $this->html;
 	}
 	
 	function output()
 	{
 
-		$html = "";
+		$this->html = "";
 		
 		foreach ($this->toc as $item) {
 			
@@ -167,14 +176,14 @@ class TOC
 			 $link = "<a href=\"#$id\">$text</a>";
 			
 			if ($level == $this->maxlevel) {
-				$html .= "<h4>$link</h4>\n";
+				$this->html .= "<h4>$link</h4>\n";
 			}else {
-				$html .= "\t<div class=\"menu-item\">$link</div>\n";
+				$this->html .= "\t<div class=\"menu-item\">$link</div>\n";
 			}
 			
 		}
 		
-		return $html;
+		return $this->html;
 	}	
 }
 
