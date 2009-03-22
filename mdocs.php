@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Enable this when debugging:
+ */
 error_reporting(E_ALL);
 
 /**
@@ -14,12 +17,38 @@ error_reporting(E_ALL);
  */
 
 $config = new stdClass();
+
+/**
+ * The folder where all of the Markdown documentation files are stored.
+ */
 $config->path      = 'docs/';
+
+/**
+ * The Markdown file extension used for all the documentation files.
+ */
 $config->extension = '.md';
+
+/**
+ * The file to load, when no file is specified
+ */
 $config->index     = 'Core/Core';
+
+/**
+ * Default Syntax Highlighting Language
+ * @see /assets/geshi/ for complete list.
+ */
 $config->language  = 'javascript';
 
+/**
+ * The highest header level to include in the Table of Contents
+ * This will generally be left alone.
+ */
 $config->maxlevel  = 1;
+
+/**
+ * The lowest header level to include in the Table of Contents
+ * This will generally be left alone.
+ */
 $config->minlevel  = 2;
 
 
