@@ -40,15 +40,10 @@ $config->index     = 'Core/Core';
 $config->language  = 'javascript';
 
 /**
- * The highest header level to include in the Table of Contents
- * This will generally be left alone.
+ * The highest/lowest header level to include in the Table of Contents
+ * You shouldn't need to change these.
  */
 $config->maxlevel  = 1;
-
-/**
- * The lowest header level to include in the Table of Contents
- * This will generally be left alone.
- */
 $config->minlevel  = 2;
 
 
@@ -127,18 +122,17 @@ $toc->generate();
  * Clean Filename Path
  * 
  * Yes, it's overkill, but why not, it's fun!
- * This function restricts allows only the following characters 
- * to pass: 	A-Z a-z 0-9 - _ . /
+ * This function allows only the following characters to pass:
+ * 		A-Z a-z 0-9 - _ . /
  * 
  * It also goes into great detail to make sure that troublesome 
- * slash and period characters are not abused by would be hackers.
+ * slash and period characters are not abused by would-be hackers.
  * So because of this, you can't read any file or folder that starts 
  * or ends with a period, but then again, you shouldn't have public 
  * files named like that in the first place, right?
  *
  * @param string $file 
- * @return void
- * @author Jay Williams
+ * @return string $filename
  */
 function clean_filename($filename='')
 {
