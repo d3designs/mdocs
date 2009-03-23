@@ -6,3 +6,7 @@ This project is very young, so any feedback or suggestions are welcome. Just sen
 
 ## Demo:
 <http://dev.d3done.com/mdocs/>
+
+## Requirements:
+
+   * PHP 5.2+
