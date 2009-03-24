@@ -79,7 +79,7 @@ $config->log = 'github.log';
 /**
  * Verify that an authorized client is submitting the request...
  */
-if (!isset($_GET['key']) || $_GET['key'] != $config->key)
+if (!isset($_REQUEST['key']) || $_REQUEST['key'] != $config->key)
 	_die('ERROR: Incorrect Key');
 
 /**
@@ -176,13 +176,15 @@ if ($exit_code !== 0 || strpos($last_line,'fatal:') !== false)
 	_die("ERROR: Couldn't update local repository");
 	
 
+
+_die('SUCCESS!');
+
 function _die($message='')
 {
 	global $config;
 	
 	if (empty($config->log))
 		die($message);
-		
 		
 	$log  = "##################################################\n";
 	$log .=	date('r')."\n";
