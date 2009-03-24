@@ -85,7 +85,7 @@ if (!isset($_REQUEST['key']) || $_REQUEST['key'] != $config->key)
 /**
  * Check to see if we have a payload to process...
  */
-if (!isset($_POST['payload']))
+if (!isset($_REQUEST['payload']))
 	_die('ERROR: No payload received');
 
 
@@ -96,9 +96,9 @@ if (!isset($_POST['payload']))
 if (!function_exists('json_decode')) {
 	require_once 'assets/json.php';
 	$json = new Services_JSON();
-	$paylaod = $json->decode($_POST['payload']);
+	$paylaod = $json->decode($_REQUEST['payload']);
 }else {
-	$paylaod = json_decode($_POST['payload']);
+	$paylaod = json_decode($_REQUEST['payload']);
 }
 
 
