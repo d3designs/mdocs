@@ -444,6 +444,7 @@ Injects, or inserts, the Element at a particular place relative to the Element's
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="myFirstElement"></div>
 	<div id="mySecondElement"></div>
 	<div id="myThirdElement"></div>
@@ -456,6 +457,7 @@ Injects, or inserts, the Element at a particular place relative to the Element's
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="mySecondElement">
 		<div id="myFirstElement"></div>
 	</div>
@@ -468,6 +470,7 @@ Injects, or inserts, the Element at a particular place relative to the Element's
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="mySecondElement">
 		<div id="myThirdElement"></div>
 		<div id="myFirstElement"></div>
@@ -481,6 +484,7 @@ Injects, or inserts, the Element at a particular place relative to the Element's
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="myFirstElement"></div>
 	<div id="mySecondElement"></div>
 
@@ -492,6 +496,7 @@ Injects, or inserts, the Element at a particular place relative to the Element's
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="mySecondElement"></div>
 	<div id="myFirstElement"></div>
 
@@ -532,6 +537,7 @@ Appends the Element at a particular place relative to the Element's children (sp
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="myFirstElement">
 		<div id="mySecondElement"></div>
 	</div>
@@ -576,6 +582,7 @@ Inserts the passed element(s) inside the Element (which will then become the par
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="myParent">
 		<div id="myFirstElement" />
 	</div>
@@ -618,7 +625,8 @@ The Element is moved to the position of the passed element and becomes the paren
 ### Examples:
 
 ##### HTML
-
+	
+	{.html}
 	<div id="myFirstElement"></div>
 
 ##### JavaScript
@@ -628,6 +636,7 @@ The Element is moved to the position of the passed element and becomes the paren
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="mySecondElement">
 		<div id="myFirstElement"></div>
 	</div>
@@ -657,6 +666,7 @@ A text node will be created inside this Element, in either the top or bottom pos
 
 ##### HTML
 
+	{.html}
 	<div id="myElement">Hey.</div>
 
 ##### JavaScript
@@ -665,6 +675,7 @@ A text node will be created inside this Element, in either the top or bottom pos
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="myElement">Hey. Howdy.</div>
 
 
@@ -687,6 +698,7 @@ Removes the Element from the DOM.
 
 ##### HTML
 
+	{.html}
 	<div id="myElement"></div>
 	<div id="mySecondElement"></div>
 
@@ -696,6 +708,7 @@ Removes the Element from the DOM.
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="mySecondElement"></div>
 
 ### See Also:
@@ -728,6 +741,7 @@ Clones the Element and returns the cloned one.
 
 ##### HTML
 
+	{.html}
 	<div id="myElement"></div>
 
 ##### JavaScript
@@ -737,6 +751,7 @@ Clones the Element and returns the cloned one.
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="myElement">ciao</div>
 	<div>ciao</div>
 
@@ -801,6 +816,7 @@ Tests the Element to see if it has the passed in className.
 
 ##### HTML
 
+	{.html}
 	<div id="myElement" class="testClass"></div>
 
 ##### JavaScript
@@ -830,6 +846,7 @@ Adds the passed in class to the Element, if the Element doesnt already have it.
 
 ##### HTML
 
+	{.html}
 	<div id="myElement" class="testClass"></div>
 
 ##### JavaScript
@@ -838,6 +855,7 @@ Adds the passed in class to the Element, if the Element doesnt already have it.
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="myElement" class="testClass newClass"></div>
 
 
@@ -864,6 +882,7 @@ Works like [Element:addClass](#Element:addClass), but removes the class from the
 
 ##### HTML
 
+	{.html}
 	<div id="myElement" class="testClass newClass"></div>
 
 ##### JavaScript
@@ -872,6 +891,7 @@ Works like [Element:addClass](#Element:addClass), but removes the class from the
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="myElement" class="testClass"></div>
 
 
@@ -897,6 +917,7 @@ Adds or removes the passed in class name to the Element, depending on whether or
 
 ##### HTML
 
+	{.html}
 	<div id="myElement" class="myClass"></div>
 
 ##### JavaScript
@@ -905,6 +926,7 @@ Adds or removes the passed in class name to the Element, depending on whether or
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="myElement" class=""></div>
 
 ##### JavaScript
@@ -913,6 +935,7 @@ Adds or removes the passed in class name to the Element, depending on whether or
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="myElement" class="myClass"></div>
 
 
@@ -1077,6 +1100,7 @@ Checks all descendants of this Element for a match.
 
 ##### HTML
 
+	{.html}
 	<div id="Darth_Vader">
 		<div id="Luke"></div>
 	</div>
@@ -1105,6 +1129,7 @@ Empties an Element of all its children.
 
 ##### HTML
 
+	{.html}
 	<div id="myElement">
 		<p></p>
 		<span></span>
@@ -1116,6 +1141,7 @@ Empties an Element of all its children.
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="myElement"></div>
 
 
@@ -1154,6 +1180,7 @@ Reads the child inputs of the Element and generates a query string based on thei
 
 ##### HTML
 
+	{.html}
 	<form id="myForm" action="submit.php">
 		<input name="email" value="bob@bob.com" />
 		<input name="zipCode" value="90210" />
@@ -1182,6 +1209,7 @@ Returns the selected options of a select element.
 
 ##### HTML
 
+	{.html}
 	<select id="country-select" name="country">
 		<option value="US">United States</option
 		<option value ="IT">Italy</option>
@@ -1219,6 +1247,7 @@ Returns a single element attribute.
 
 ##### HTML
 
+	{.html}
 	<img id="myImage" src="mootools.png" title="MooTools, the compact JavaScript framework" alt="" />
 
 ##### JavaScript
@@ -1248,6 +1277,7 @@ Gets multiple element attributes.
 
 ##### HTML
 
+	{.html}
 	<img id="myImage" src="mootools.png" title="MooTools, the compact JavaScript framework" alt="" />
 
 ##### JavaScript
@@ -1276,6 +1306,7 @@ Sets an attribute or special property for this Element.
 
 ##### HTML
 
+	{.html}
 	<img id="myImage" />
 
 ##### JavaScript
@@ -1284,6 +1315,7 @@ Sets an attribute or special property for this Element.
 
 ##### Resulting HTML
 
+	{.html}
 	<img id="myImage" src="mootools.png" />
 
 ### Note
@@ -1313,6 +1345,7 @@ Sets numerous attributes for the Element.
 
 ##### HTML
 
+	{.html}
 	<img id="myImage" />
 
 ##### JavaScript
@@ -1350,6 +1383,7 @@ Removes an attribute from the Element.
 
 ##### HTML
 
+	{.html}
 	<a id="myAnchor" href="#" onmousedown="alert('click');"></a>
 
 ##### JavaScript
@@ -1359,6 +1393,7 @@ Removes an attribute from the Element.
 
 ##### Resulting HTML
 
+	{.html}
 	<a id="myAnchor" href="#"></a>
 
 
@@ -1385,6 +1420,7 @@ Removes numerous attributes from the Element.
 
 ##### HTML
 
+	{.html}
 	<a id="myAnchor" href="#" title="hello world"></a>
 
 ##### JavaScript
@@ -1393,6 +1429,7 @@ Removes numerous attributes from the Element.
 
 ##### Resulting HTML
 
+	{.html}
 	<a></a>
 
 
@@ -1514,6 +1551,7 @@ Sets the innerHTML of the Element.
 
 ##### HTML
 
+	{.html}
 	<div id="myElement"></div>
 
 ##### JavaScript
@@ -1522,6 +1560,7 @@ Sets the innerHTML of the Element.
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="myElement">
 		<div></div>
 		<p></p>
@@ -1573,6 +1612,7 @@ Sets the inner text of the Element.
 
 ##### Resulting HTML
 
+	{.html}
 	<div id="myElement">some text</div>
 
 ### Getter:
@@ -1591,6 +1631,7 @@ Gets the inner text of the Element.
 
 ##### HTML
 
+	{.html}
 	<div id="myElement">my text</div>
 
 ##### JavaScript
@@ -1618,6 +1659,7 @@ Returns the tag name of the Element in lower case.
 
 ##### HTML
 
+	{.html}
 	<img id="myImage" />
 
 ##### JavaScript

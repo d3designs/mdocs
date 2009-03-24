@@ -130,7 +130,8 @@ ul {
 h1, h2, h3, h4, h5, h6 {
 	color: #313334;
 	font-weight: bold;
-	margin-top: 0;
+	margin-bottom: .5em;
+	margin-top: .5em;
 }
 
 #doc h1 {
@@ -169,6 +170,10 @@ h2 a:link, h2 a:visited {
 
 #doc h4 {
 	font-size: 1.2em;
+}
+
+#doc h5 {
+	font-size: 1em;
 }
 
 
