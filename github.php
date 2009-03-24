@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL);
+ob_start();
 
 
 /**
@@ -32,7 +32,7 @@ $config->repo_path = 'docs/';
 
 
 /**
- * The is the local path on your server where you have the Git 
+* The is the local path on your server where you have the Git 
  * clone of your project (w/docs).
  * 
  * Note:
@@ -61,20 +61,32 @@ $config->key = 'CHANGE_ME';
  * 
  * You may need to set the full path to your Git executable depending
  * on how Git is setup on your server.
+ * 
+ * Adding " 2>&1" to the end of the command will allow you to see any
+ * errors that occurred during the git update.
  */
-$config->command = 'git pull';
+$config->command = 'git pull 2>&1';
+
+
+/**
+ * GitHub Error Log
+ * 
+ * Filename & path where you want to store the GitHub error log.
+ * If you don't with to keep a log, simply set the string to ''.
+ */
+$config->log = 'github.log';
 
 /**
  * Verify that an authorized client is submitting the request...
  */
 if (!isset($_GET['key']) || $_GET['key'] != $config->key)
-	die('ERROR: Incorrect Key');
+	_die('ERROR: Incorrect Key');
 
 /**
  * Check to see if we have a payload to process...
  */
 if (!isset($_POST['payload']))
-	die('ERROR: No payload received');
+	_die('ERROR: No payload received');
 
 
 /**
@@ -95,7 +107,7 @@ if (!function_exists('json_decode')) {
  * Verify that we have something to process...
  */
 if (!isset($paylaod->commits))
-	die('ERROR: No commits to process');
+	_die('ERROR: No commits to process');
 
 
 /**
@@ -146,7 +158,7 @@ if (empty($config->repo_path)){
  * No updates exist...
  */
 if (!$update)
-	die('Already up-to-date.');
+	_die('Already up-to-date.');
 
 
 
@@ -157,12 +169,29 @@ if (!$update)
 // Move to the path
 chdir($config->path);
 // Do the pull...
-echo '<pre>';
-passthru($config->command,$exit_code);
-echo '</pre>';
+$last_line = system($config->command,$exit_code);
 
-if ($exit_code !== 0)
-	die("ERROR: Couldn't update local repository");
 
+if ($exit_code !== 0 || strpos($last_line,'fatal:') !== false)
+	_die("ERROR: Couldn't update local repository");
+	
+
+function _die($message='')
+{
+	global $config;
+	
+	if (empty($config->log))
+		die($message);
+		
+		
+	$log  = "##################################################\n";
+	$log .=	date('r')."\n";
+	$log .= "$message\n";
+	$log .= ob_get_contents()."\n";
+	
+	file_put_contents($config->log,$log,FILE_APPEND);
+	
+	die();
+}
 
 ?>
