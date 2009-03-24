@@ -28,7 +28,7 @@ $config = new stdClass();
  * If you want the script to run on every commit, set the path
  * to blank (''), otherwise, enter your doc path.
  */
-$config->repo_path = 'docs/';
+$config->repo_path = '';
 
 
 /**
@@ -63,7 +63,7 @@ $config->key = 'CHANGE_ME';
  * on how Git is setup on your server.
  * 
  * Adding " 2>&1" to the end of the command will allow you to see any
- * errors that occurred during the git update.
+ * errors that occurred during the git update in the log file.
  */
 $config->command = 'git pull 2>&1';
 
@@ -158,7 +158,7 @@ if (empty($config->repo_path)){
  * No updates exist...
  */
 if (!$update)
-	_die('Already up-to-date.');
+	_die('No updates necessary');
 
 
 
@@ -177,7 +177,7 @@ if ($exit_code !== 0 || strpos($last_line,'fatal:') !== false)
 	
 
 
-_die('SUCCESS!');
+_die('Success!');
 
 function _die($message='')
 {
