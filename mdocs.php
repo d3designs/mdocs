@@ -6,8 +6,6 @@
 error_reporting(E_ALL);
 
 /**
- * @todo Create A GitHub update hook file, to keep the docs in sync with GitHub
- * 
  * @todo Add a "clean url" (mod_rewrite) option to the Menu class
  */
 

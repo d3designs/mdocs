@@ -6,7 +6,7 @@
 * Example:
 * 
 * 	$toc = new TOC( $html );
-* 	echo $toc->output_flat();
+* 	echo $toc->generate();
 * 
 * 
 * @author Jay Williams

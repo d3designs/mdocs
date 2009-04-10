@@ -1357,6 +1357,7 @@ Sets numerous attributes for the Element.
 
 ##### Resulting HTML
 
+	{.html}
 	<img id="myImage" src="whatever.gif" alt="whatever dude" />
 
 

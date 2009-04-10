@@ -76,6 +76,11 @@ $config->command = 'git pull 2>&1';
  */
 $config->log = 'github.log';
 
+
+
+
+
+
 /**
  * Verify that an authorized client is submitting the request...
  */
@@ -142,7 +147,7 @@ if (empty($config->repo_path)){
 	
 	/**
 	 * Otherwise, run through the changed files, and see if any files
-	 * have been changed in the docs directory in the repository
+	 * have been changed in the docs directory of the repository
 	 */
 	foreach ($files as $file) {
 		if (strpos($file,$config->repo_path) !== false) {

@@ -4,7 +4,7 @@
 * Document Navigation Menu
 * 
 * Example:
-* 	$menu = new menu();
+* 	$menu = new menu( 'docs/', '.md' );
 * 	echo $menu->generate();
 * 
 */
