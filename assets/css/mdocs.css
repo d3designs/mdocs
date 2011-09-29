@@ -72,6 +72,7 @@ ul {
 }
 
 #container {
+  position: relative;
 	background-color: #F4F5F5;
 	margin: 0px auto;
 	padding-top: 36px;
@@ -81,6 +82,13 @@ ul {
 }
 
 
+
+/* @end */
+
+/* @group Aside */
+aside#aside-right {
+  float: right; width: 193px;
+}
 
 /* @end */
 
@@ -99,7 +107,15 @@ ul {
 	display: block;
 }
 
-#menu p, #menu div {
+#menu ul {
+  padding: 0;
+  margin: 0;
+}
+#menu li {
+  list-style: none;
+}
+
+#menu p, #menu li {
 	text-align: right;
 }
 
@@ -114,6 +130,7 @@ ul {
 
 
 /* @end */
+
 
 /* @group Doc */
 
@@ -218,10 +235,6 @@ h2 a:link, h2 a:visited {
 
 /* @group TOC */
 
-#toc {
-	float: left;
-}
-
 #toc h4 {
 	padding: 10px 0;
 	margin: 0;
@@ -238,6 +251,9 @@ h2 a:link, h2 a:visited {
 }
 
 
+#toc {  padding: 1em 16px; margin: 50px 0;}
+#toc.floating { position: fixed; top: 0; }
+#toc.pinned-bottom { position: absolute; bottom: 0; background-color: orange; _position: static; }
 
 /* @end */
 
