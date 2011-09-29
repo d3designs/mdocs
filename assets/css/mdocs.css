@@ -87,7 +87,7 @@ ul {
 
 /* @group Aside */
 aside#aside-right {
-  float: right; width: 193px;
+  float: left; max-width: 193px;
 }
 
 /* @end */
