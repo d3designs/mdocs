@@ -37,6 +37,7 @@ include 'mdocs.php';
   			</div>
   		</div>
   		<script type="text/javascript" src="assets/js/jquery-1.6.4.min.js"></script>
+  		<script type="text/javascript" src="assets/js/jquery.smooth-scroll-1.4.min.js"></script>
   		<script type="text/javascript" src="assets/js/jquery.floating-widget-0.9.1.js"></script>
   		<script type="text/javascript" src="assets/js/main.js"></script>
   </body>

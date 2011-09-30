@@ -7,6 +7,8 @@
     
     // TOC floating widget
     $('#toc').floatingWidget();
+    // TOC smooth scroll
+    $('#toc a').smoothScroll();
     
     // Fix all colons in id
     $('#doc *[id*=":"]').each(function(){
