@@ -112,7 +112,7 @@ aside#aside-right {
 	width: 15%;
 	margin-right: 10px;
 	font-size: 1.1em;
-	padding-left: 10px;
+	padding: 0 10px;
 }
 
 #menu a, #toc a {
@@ -151,7 +151,7 @@ aside#aside-right {
 	/*width: 590px;*/
 	width: 61%;
 	padding: 0 24px 0 25px;
-	margin: 0 10px 3em 14px;
+	margin: 0 0 3em 0;
 	border-left: 1px solid rgb(221, 221, 221);
 	border-right: 1px solid rgb(221, 221, 221);
 }
@@ -263,10 +263,22 @@ h2 a:link, h2 a:visited {
 }
 
 
-#toc {  padding: 1em 16px;}
+#toc {  padding: 0 25px;}
 #toc.floating { position: fixed; top: 0; }
 #toc.pinned-bottom { position: absolute; bottom: 0; background-color: orange; _position: static; }
 
+/* @end */
+
+/* @group DOC & TOC Loading */
+
+#doc.loading,#toc.loading {
+  background: url('../images/ajax-loader.gif') no-repeat 8px 0;
+}
+#doc.loading:before , #toc.loading:before {
+  color: #BFBFBF;
+  font-weight: bold;
+  content: 'Loading...';
+}
 /* @end */
 
 /* @group Footer */

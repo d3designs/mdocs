@@ -5,6 +5,19 @@
  */
 include 'mdocs.php';
 
+if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) 
+  && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+  $return = array(
+    'file' => $file,
+    'menu' => $menu,
+    'doc' => $doc,
+    'toc' => $toc->getHtml()
+  );
+  
+  print json_encode($return);
+  exit;
+}
+
 
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -39,6 +52,7 @@ include 'mdocs.php';
   		<script type="text/javascript" src="assets/js/jquery-1.6.4.min.js"></script>
   		<script type="text/javascript" src="assets/js/jquery.smooth-scroll-1.4.min.js"></script>
   		<script type="text/javascript" src="assets/js/jquery.floating-widget-0.9.1.js"></script>
+  		<script type="text/javascript" src="assets/js/jquery.address-1.4.min.js"></script>
   		<script type="text/javascript" src="assets/js/main.js"></script>
   </body>
 </html>
