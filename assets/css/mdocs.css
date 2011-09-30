@@ -85,6 +85,18 @@ ul {
 
 /* @end */
 
+/* @group DocDecoration */
+.document-decoration {
+  color: #BFBFBF;
+  font-family: serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 30px;
+}
+.documetn-decoration.pound {}
+
+/* @end */
+
 /* @group Aside */
 aside#aside-right {
   float: left; max-width: 193px;
@@ -251,7 +263,7 @@ h2 a:link, h2 a:visited {
 }
 
 
-#toc {  padding: 1em 16px; margin: 50px 0;}
+#toc {  padding: 1em 16px;}
 #toc.floating { position: fixed; top: 0; }
 #toc.pinned-bottom { position: absolute; bottom: 0; background-color: orange; _position: static; }
 
