@@ -185,6 +185,11 @@ class TOC
 		
 		return $this->html;
 	}	
+  
+  function getHtml() {
+    return $this->html;
+  }
+  
 }
 
 

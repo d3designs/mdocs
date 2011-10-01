@@ -62,16 +62,20 @@ class Menu
 		$this->html = "";
 
 		foreach ($files as $group => $files) {
+		  
+      $this->html .= '<div class="category">';
 
 			$this->html .= "<h4>$group</h4>\n";
+      $this->html .= "<ul>";
 
 			foreach ($files as $file) {
 				$file        = pathinfo($file);
 				$url         = "?file=$group/$file[filename]";
-				$this->html .= "\t<div><a href=\"$url\">$file[filename]</a></div>\n";
+				$this->html .= "\t<li><a href=\"$url\">$file[filename]</a></li>\n";
 
 			}
-
+      $this->html .= '</ul>';
+      $this->html .= '</div>';
 		}
 
 		return $this->html;
