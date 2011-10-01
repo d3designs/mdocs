@@ -72,6 +72,7 @@ ul {
 }
 
 #container {
+  position: relative;
 	background-color: #F4F5F5;
 	margin: 0px auto;
 	padding-top: 36px;
@@ -84,6 +85,25 @@ ul {
 
 /* @end */
 
+/* @group DocDecoration */
+.document-decoration {
+  color: #BFBFBF;
+  font-family: serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 30px;
+}
+.documetn-decoration.pound {}
+
+/* @end */
+
+/* @group Aside */
+aside#aside-right {
+  float: left; max-width: 193px;
+}
+
+/* @end */
+
 /* @group Menu */
 
 #menu {
@@ -92,14 +112,22 @@ ul {
 	width: 15%;
 	margin-right: 10px;
 	font-size: 1.1em;
-	padding-left: 10px;
+	padding: 0 10px;
 }
 
 #menu a, #toc a {
 	display: block;
 }
 
-#menu p, #menu div {
+#menu ul {
+  padding: 0;
+  margin: 0;
+}
+#menu li {
+  list-style: none;
+}
+
+#menu p, #menu li {
 	text-align: right;
 }
 
@@ -115,6 +143,7 @@ ul {
 
 /* @end */
 
+
 /* @group Doc */
 
 #doc {
@@ -122,7 +151,7 @@ ul {
 	/*width: 590px;*/
 	width: 61%;
 	padding: 0 24px 0 25px;
-	margin: 0 10px 3em 14px;
+	margin: 0 0 3em 0;
 	border-left: 1px solid rgb(221, 221, 221);
 	border-right: 1px solid rgb(221, 221, 221);
 }
@@ -218,10 +247,6 @@ h2 a:link, h2 a:visited {
 
 /* @group TOC */
 
-#toc {
-	float: left;
-}
-
 #toc h4 {
 	padding: 10px 0;
 	margin: 0;
@@ -238,7 +263,22 @@ h2 a:link, h2 a:visited {
 }
 
 
+#toc {  padding: 0 25px;}
+#toc.floating { position: fixed; top: 0; }
+#toc.pinned-bottom { position: absolute; bottom: 0; background-color: orange; _position: static; }
 
+/* @end */
+
+/* @group DOC & TOC Loading */
+
+#doc.loading,#toc.loading {
+  background: url('../images/ajax-loader.gif') no-repeat 8px 0;
+}
+#doc.loading:before , #toc.loading:before {
+  color: #BFBFBF;
+  font-weight: bold;
+  content: 'Loading...';
+}
 /* @end */
 
 /* @group Footer */
