@@ -44,6 +44,11 @@ $config->language  = 'javascript';
 $config->maxlevel  = 1;
 $config->minlevel  = 2;
 
+/**
+* Ignore files in the root of Docs?
+*/
+$config->ignore = true;
+
 
 
 /**
@@ -104,7 +109,7 @@ $doc = $markdown->transform($doc);
 $doc = $geshi->parse_codeblocks($doc);
 
 // Create Menu:
-$menu->generate();
+$menu->generate($config->ignore);
 
 // Create TOC:
 $toc->generate();

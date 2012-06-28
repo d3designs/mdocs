@@ -55,9 +55,15 @@ class Menu
 	 *
 	 * @return string $html
 	 */
-	function generate()
+	function generate($ignore = false)
 	{
 		$files = $this->rglob('*'.$this->filetype,0,$this->dir);
+
+		if($ignore) {
+			foreach ($files as $k => $v) {
+				if(is_int($k)) unset($files[$k]);
+			}
+		}
 
 		$this->html = "";
 
