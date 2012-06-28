@@ -11,7 +11,8 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH'])
     'file' => $file,
     'menu' => $menu,
     'doc' => $doc,
-    'toc' => $toc->getHtml()
+    'toc' => $toc->getHtml(),
+    'title' => "mDocs" . " - " . $file
   );
   
   print json_encode($return);
@@ -24,7 +25,7 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH'])
 <html>
   <head>	
   		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  		<title>mDocs - <?php echo $file; ?></title>
+  		<title><?php echo isset($title) ? $title : "mDocs"; ?></title>
   		<link rel="stylesheet" type="text/css" media="all" href="assets/css/mdocs.css">
   </head>
   <body>

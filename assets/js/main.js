@@ -44,7 +44,7 @@ function removeIdColons() {
         var div = document.createElement('div');
         $(div).attr('id', decoration);
         $(div).text('#');
-        console.log($(target));
+        //console.log($(target));
         $(div).css({
           position: 'absolute',
           top: position.top,
